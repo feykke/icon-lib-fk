@@ -1,0 +1,20 @@
+{
+  "name": "icon-lib-fk",
+  "version": "1.0.0",
+  "description": "Uma biblioteca de ícones personalizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/feykke/icon-lib-fk#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feykke/icon-lib-fk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feykke/icon-lib-fk/issues"
+  },
+  "keywords": ["icones", "icones-fk", "ícones", "icons", "svg"],
+  "author": "feykke",
+  "license": "MIT"
+}
