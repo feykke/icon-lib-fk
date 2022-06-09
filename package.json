@@ -2,13 +2,14 @@
   "name": "icon-lib-fk",
   "version": "1.1.2",
   "description": "Uma biblioteca de ícones personalizados",
-  "main": "index.js",
+  "main": "react/index.js",
   "scripts": {
-    "clean": "rimraf outline solid two-tone package *.tgz",
+    "clean": "rimraf svg src react package *.tgz",
     "export": "figma-export use-config figma.config.js",
+    "bundle": "rollup --config",
     "test": "node test.js",
     "np": "np",
-    "build": "run-s clean export",
+    "build": "run-s clean export bundle",
     "release": "run-s build np"
   },
   "homepage": "https://github.com/feykke/icon-lib-fk#readme",
@@ -27,20 +28,30 @@
     "svg"
   ],
   "files": [
-    "outline/",
-    "solid/",
-    "two-tone/"
+    "svg/outline/",
+    "svg/solid/",
+    "svg/two-tone/",
+    "react/"
   ],
+  "peerDependencies": {
+    "react": ">=16"
+  },
   "author": "feykke",
   "license": "MIT",
   "devDependencies": {
     "@figma-export/cli": "^4.4.0",
     "@figma-export/output-components-as-svg": "^4.4.0",
+    "@figma-export/output-components-as-svgr": "^4.4.0",
     "@figma-export/transform-svg-with-svgo": "^4.4.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/react": "^18.0.12",
     "cheerio": "^1.0.0-rc.11",
     "dotenv": "^16.0.1",
     "np": "^7.6.1",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2"
+    "react": "^18.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.6",
+    "typescript": "^4.7.3"
   }
 }
