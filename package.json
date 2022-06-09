@@ -4,7 +4,7 @@
   "description": "Uma biblioteca de ícones personalizados",
   "main": "react/index.js",
   "scripts": {
-    "clean": "rimraf svg src react package *.tgz",
+    "clean": "rimraf svg src react sprite package *.tgz",
     "export": "figma-export use-config figma.config.js",
     "bundle": "rollup --config",
     "test": "node test.js",
@@ -31,8 +31,12 @@
     "svg/outline/",
     "svg/solid/",
     "svg/two-tone/",
-    "react/"
+    "react/",
+    "sprite/"
   ],
+  "jsdelivr": ["sprite/solid.svg", "sprite/outline.svg", "sprite/two-tone.svg"],
+  "cdn": ["sprite/solid.svg", "sprite/outline.svg", "sprite/two-tone.svg"],
+  "unpkg": ["sprite/solid.svg", "sprite/outline.svg", "sprite/two-tone.svg"],
   "peerDependencies": {
     "react": ">=16"
   },
@@ -42,6 +46,7 @@
     "@figma-export/cli": "^4.4.0",
     "@figma-export/output-components-as-svg": "^4.4.0",
     "@figma-export/output-components-as-svgr": "^4.4.0",
+    "@figma-export/output-components-as-svgstore": "^4.4.0",
     "@figma-export/transform-svg-with-svgo": "^4.4.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@types/react": "^18.0.12",

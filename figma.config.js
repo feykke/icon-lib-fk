@@ -9,13 +9,19 @@ const capitalize = s => {
 const fileId = process.env.FILE_ID
 
 const outputters = [ 
-    require('@figma-export/output-components-as-svg')({ output: './svg' }),
+    require('@figma-export/output-components-as-svg')({
+        output: './svg'
+    }),
+    require('@figma-export/output-components-as-svgstore')({
+        getIconId: ({ componentName }) => componentName.toLowerCase(),
+        output: './sprite'
+    }),
     require('@figma-export/output-components-as-svgr')({
         getFileExtension: () => ".tsx",
         getComponentName: ({ componentName, pageName }) =>
             componentName + capitalize(pageName),
         getSvgrConfig: () => ({ typescript: true }),
-        output: './src',
+        output: './src'
     })
 ]
 
