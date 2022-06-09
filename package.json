@@ -4,7 +4,12 @@
   "description": "Uma biblioteca de ícones personalizados",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf outline solid two-tone package *.tgz",
+    "export": "figma-export use-config figma.config.js",
+    "test": "node test.js",
+    "np": "np",
+    "build": "run-s clean export",
+    "release": "run-s build np"
   },
   "homepage": "https://github.com/feykke/icon-lib-fk#readme",
   "repository": {
@@ -14,7 +19,28 @@
   "bugs": {
     "url": "https://github.com/feykke/icon-lib-fk/issues"
   },
-  "keywords": ["icones", "icones-fk", "ícones", "icons", "svg"],
+  "keywords": [
+    "icones",
+    "icones-fk",
+    "ícones",
+    "icons",
+    "svg"
+  ],
+  "files": [
+    "outline/",
+    "solid/",
+    "two-tone/"
+  ],
   "author": "feykke",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@figma-export/cli": "^4.4.0",
+    "@figma-export/output-components-as-svg": "^4.4.0",
+    "@figma-export/transform-svg-with-svgo": "^4.4.0",
+    "cheerio": "^1.0.0-rc.11",
+    "dotenv": "^16.0.1",
+    "np": "^7.6.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  }
 }
