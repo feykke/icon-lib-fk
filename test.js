@@ -1,7 +1,7 @@
 const fs = require('fs')
 const $ = require("cheerio")
 
-const directories = ["outline", "solid", "two-tone"]
+const directories = ["svg/outline", "svg/solid", "svg/two-tone"]
 let errs = 0
 
 directories.forEach(dir => {
