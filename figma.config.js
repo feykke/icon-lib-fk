@@ -26,14 +26,26 @@ const outputters = [
 ]
 
 const solidSVGOConfig = [
-    { name: 'removeDimensions', active: true },
-    { name: 'sortAttrs', params: { xmlnsOrder: 'alphabetical' } },
-    { name: 'removeAttrs', params: { attrs: 'fill' } },
-    { name: 'addAttributesToSVGElement', params: { attribute: { fill: "currentColor" } } }
+    // { name: 'removeDimensions', active: true },
+    // { name: 'removeTitle', active: false },
+    // { name: 'sortAttrs', params: { xmlnsOrder: 'alphabetical' } },
+    // { name: 'removeAttrs', params: { attrs: 'fill' } },
+    // { name: 'addAttributesToSVGElement', params: { attribute: { fill: "currentColor" } } }
+    { name: 'preset-default', params: {
+        overrides: {
+            removeViewBox: false,
+            removeDimensions: true,
+            removeTitle: false,
+            sortAttrs: true,
+            removeAttrs: { attrs: 'fill' },
+            addAttributesToSVGElement: { attribute: { fill: 'currentColor' } }
+        }
+    } }
 ]
 
 const outlineSVGOConfig = [
     { name: 'removeDimensions', active: true },
+    { name: 'removeTitle', active: false },
     { name: 'sortAttrs', params: { xmlnsOrder: 'alphabetical' } },
     { name: 'removeAttrs', params: { attrs: 'stroke' } },
     { name: 'addAttributesToSVGElement', params: { attribute: { stroke: "currentColor" } } }
@@ -41,6 +53,7 @@ const outlineSVGOConfig = [
 
 const twoToneSVGOConfig = [
     { name: 'removeDimensions', active: true },
+    { name: 'removeTitle', active: false },
     { name: 'sortAttrs', params: { xmlnsOrder: 'alphabetical' } },
     { name: 'removeAttrs', params: { attrs: ['stroke', 'fill'] } },
     { name: 'addAttributesToSVGElement', params: { attribute: { stroke: 'currentColor', fill: 'currentColor' } } }
@@ -52,7 +65,7 @@ module.exports = {
             'components', {
                 fileId,
                 onlyFromPages: ["solid"],
-                transformers: [svgo({ multipass: true, plugins: solidSVGOConfig })],
+                // transformers: [svgo({ multipass: true, plugins: solidSVGOConfig })],
                 outputters,
             }
         ],
